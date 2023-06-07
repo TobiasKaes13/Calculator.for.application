@@ -1,23 +1,26 @@
+# Importiere das colorama-Modul
+from colorama import init, Fore, Style
+
 # Definition der Funktionen für die vier Grundrechenarten
 
 def add(a, b):
     return a + b
 
-
 def subtract(a, b):
     return a - b
 
-
 def multiply(a, b):
     return a * b
-
 
 def divide(a, b):
     if b != 0:
         return a / b
     else:
-        return "Fehler da du durch 0 geteilt hast"
+        return "Fehler, da du durch 0 geteilt hast"
 
+
+# Initialisiere colorama
+init()
 
 # Begrüßungsnachricht
 
@@ -65,7 +68,7 @@ while True:
     elif choice == "4":
         result = divide(num1, num2)
 
-    # Ausgabe des Ergebnisses, sofern vorhanden
+    # Ausgabe des Ergebnisses mit Farbhervorhebung
 
     if result is not None:
-        print("Ergebnis:", result)
+        print("Ergebnis: " + Fore.GREEN + str(result) + Style.RESET_ALL)
